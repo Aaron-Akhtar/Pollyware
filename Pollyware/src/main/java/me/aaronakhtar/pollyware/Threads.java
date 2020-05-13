@@ -24,18 +24,17 @@ public class Threads {
                                 while (Utils.isConn(socket.getOutputStream())) {
                                     try {
                                         while ((line = reader.readLine()) != null) {
-                                            System.out.println("yes");
                                             String[] args = line.toLowerCase().split(" ");
                                             System.out.println(Arrays.toString(args[0].getBytes()));
                                             if (args[0].equalsIgnoreCase("info")) { // returns system info from system properties
-                                                System.out.println("Sex");
+                                               
                                                 String[] l = new String[args.length - 1];
                                                 for (int x = 1; x < args.length; x++) {
                                                     l[x - 1] = args[x];
                                                 }
-                                                System.out.println("x");
+                                                
                                                 writer.println(Utils.returnProps(l).toString());
-                                                System.out.println("sent");
+                                                
                                                 writer.flush();
                                             }
                                         }
